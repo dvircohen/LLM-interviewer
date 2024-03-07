@@ -16,10 +16,6 @@ def main():
     api_client = APIClient(api_key=st.secrets["deepinfra_key"],
                            base_url="https://api.deepinfra.com/v1/openai")
 
-    # Authentication check
-    if not check_password(st.session_state, st.secrets["password"]):
-        st.stop()  # Stop execution if authentication fails
-
     # UI: Display initial instructions, file uploader, and other UI elements
     ui.display_initial_ui()
 
