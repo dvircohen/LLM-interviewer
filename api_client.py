@@ -7,15 +7,6 @@ class APIClient:
     def __init__(self, api_key, base_url):
         self.client = OpenAI(api_key=api_key, base_url=base_url)
 
-    # def get_text_from_recording(self, recording, secret_key):
-    #     headers = {'Authorization': f'bearer {secret_key}'}
-    #     files = {'audio': recording}
-    #     url = 'https://api.deepinfra.com/v1/inference/openai/whisper-base.en'
-    #     response = requests.post(url, headers=headers, files=files).text
-    #     response = json.loads(response)['text']
-    #     return response
-
-
     def get_text_from_openai(self, system_prompt, session_state):
         messages = [{"role": m["role"], "content": m["content"]} for m in session_state.messages]
         if system_prompt:
