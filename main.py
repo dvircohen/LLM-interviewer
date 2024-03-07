@@ -19,7 +19,7 @@ def main():
     # UI: Display initial instructions, file uploader, and other UI elements
     ui.display_initial_ui()
 
-    messages_container = st.container(border=False, height=400)
+    messages_container = st.container(border=False, height=600)
     record_icon_col, chat_col = st.columns([2, 11])
 
     # Process uploaded files and position text
