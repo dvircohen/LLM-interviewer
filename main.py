@@ -56,8 +56,8 @@ def main():
                     with st.chat_message("assistant"):
                         with st.spinner("Thinking what to answer..."):
                             # Get response from OpenAI based on the conversation
-                            conv_answer = api_client.get_text_from_openai(None, st.session_state)
-                            feedback_answer = api_client.get_text_from_openai(get_system_prompt_only_feedback(), st.session_state)
+                            conv_answer = api_client.get_text_from_openai(None, st.session_state)['next message']
+                            feedback_answer = api_client.get_text_from_openai(get_system_prompt_only_feedback(), st.session_state)['feedback']
 
                             st.write(conv_answer)
 
