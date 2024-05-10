@@ -20,4 +20,5 @@ class APIClient:
             stream=False,
             response_format={"type": "json_object"},
         )
-        return answer.choices[0].message.content
+        final_answer = json.loads(answer.choices[0].message.content)
+        return final_answer
